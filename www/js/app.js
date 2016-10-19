@@ -22,3 +22,17 @@ angular.module('onesv', ['ionic'])
     }
   });
 })
+
+module.controller('videoController', function($scope, $cordovaCapture){
+  $scope.videoURL = "https://www.youtube.com/watch?v=wJCUNMMvVnE";
+
+  $scope.captureVideo = function(){
+    var options = {limit: 1, duration: 1};
+
+    $cordovaCapture.captureVideo(options).then(function(videoData){
+      console.log('video data: ' + angular.toJson(data));
+    },function(err){
+      console.log('video error: ' + angular.toJson(data));
+    });
+  };
+});

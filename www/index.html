@@ -27,26 +27,28 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+
   </head>
-  <body ng-app="onesv" ng-controller="videoController">
+  <body ng-app="starter">
 
     <ion-pane>
       <ion-header-bar class="bar bar-header bar-dark">
         <h1 class="title">One Second Video</h1>
       </ion-header-bar>
-      <ion-content>
+      <ion-content ng-controller="videoController">
         <div class="list card">
           <div class="item item-video">
-            <video ng-src={{videoURL}}>
+            <video ng-src="{{videoURL}}" style="text-align: center">
+          </div>
         </div>
-        <button ng-click ="captureVideo"
-        class="button button-block button-assertive"
-        id="record">
-        <i class="icon ion-record"></i> Record</button>
+        <button type="button" ng-click ="captureVideo()" class="button button-block button-assertive" id="record">
+          <i class="icon ion-record"></i> Record
+        </button>
       </ion-content>
     </ion-pane>
   </body>

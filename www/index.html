@@ -36,20 +36,28 @@
   </head>
   <body ng-app="onesv">
 
-    <ion-pane>
+    <ion-pane ng-controller="videoController">
       <ion-header-bar class="bar bar-header bar-dark">
         <h1 class="title">One Second Video</h1>
       </ion-header-bar>
-      <ion-content ng-controller="videoController">
+      <ion-content>
         <div class="list card">
           <div class="item item-video">
             <video ng-src="{{videoURL}}" style="text-align: center">
           </div>
         </div>
-        <button type="button" ng-click ="captureVideo()" class="button button-block button-assertive" id="record">
-          <i class="icon ion-record"></i> Record
-        </button>
       </ion-content>
+      <div class="tabs tabs-icon-only">
+        <a class="tab-item">
+          <i class="icon ion-home"></i>
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-camera" ng-click ="captureVideo()"></i>
+        </a>
+        <a class="tab-item">
+          <i class="icon ion-gear-a"></i>
+        </a>
+      </div>
     </ion-pane>
   </body>
 </html>

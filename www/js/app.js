@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('onesv', ['ionic', 'ngCordova'])
+angular.module('onesv', ['ionic', 'onesv.controllers', 'onesv.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,16 +22,3 @@ angular.module('onesv', ['ionic', 'ngCordova'])
     }
   });
 })
-
-.controller('videoController', function($scope, $cordovaCapture){
-
-  $scope.captureVideo = function(){
-    var options = {limit: 1, duration: 1};
-
-    $cordovaCapture.captureVideo(options).then(function(videoData){
-
-    },function(err){
-
-    });
-  };
-});
